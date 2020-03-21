@@ -1,2 +1,2 @@
-# api-documentation
-API Documentation for different aspects of UgandaHIE Architiecture
+# hie-api-documentation
+API Documentation for end-points within aspects of Uganda Health Information Exchange (HIE) Architiecture

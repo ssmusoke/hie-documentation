@@ -1,0 +1,221 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "recency-surveillance",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://ugisl.mets.or.ug",
+      "description": "URL to the OpenHIM based mediator"
+    }
+  ],
+  "paths": {
+    "/recency": {
+      "post": {
+        "summary": "",
+        "operationId": "recency",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "HTTP Basic Authenticatiion": []
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "x-emr-date",
+            "description": "ISO 8601 date and timestamp from the server generating recency report"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dhis2_organization_uuid": {
+                    "type": "string",
+                    "description": "DHIS2 uuid for the facility sending the data "
+                  },
+                  "data": {
+                    "description": "CSV content containing a single row for each HTS test from the facility ",
+                    "type": "object",
+                    "required": [
+                      "dhis2_orgunit_uuid",
+                      "hiv_final_test_result",
+                      "date_of_birth",
+                      "sex",
+                      "visit_date",
+                      "serial_number",
+                      "encounter_uuid"
+                    ],
+                    "properties": {
+                      "dhis2_orgunit_uuid": {
+                        "type": "string"
+                      },
+                      "referred_location": {
+                        "type": "string"
+                      },
+                      "referred_to_hiv_care": {
+                        "type": "string"
+                      },
+                      "referred_to_tb_services": {
+                        "type": "string"
+                      },
+                      "presumtive_tb": {
+                        "type": "string"
+                      },
+                      "couple_result": {
+                        "type": "string"
+                      },
+                      "couple_result_received": {
+                        "type": "string"
+                      },
+                      "individual_result_received": {
+                        "type": "string"
+                      },
+                      "recent_hiv_test_result": {
+                        "type": "string"
+                      },
+                      "recency_test_concent": {
+                        "type": "string"
+                      },
+                      "hiv_final_syphillis_duo_result": {
+                        "type": "string"
+                      },
+                      "hiv_final_test_result": {
+                        "type": "string"
+                      },
+                      "counseled_as": {
+                        "type": "string"
+                      },
+                      "pretest_counselling_done": {
+                        "type": "string"
+                      },
+                      "partner_recent_test_result": {
+                        "type": "string"
+                      },
+                      "prior_partner_testing": {
+                        "type": "string"
+                      },
+                      "number_of_sexual_partners_last_12_months": {
+                        "type": "string"
+                      },
+                      "number_of_tests_last_12_months": {
+                        "type": "string"
+                      },
+                      "last_hiv_test_result": {
+                        "type": "string"
+                      },
+                      "last_hiv_test_date": {
+                        "type": "string"
+                      },
+                      "first_time_hiv_test": {
+                        "type": "string"
+                      },
+                      "special_category_other": {
+                        "type": "string"
+                      },
+                      "special_category": {
+                        "type": "string"
+                      },
+                      "reason_for_testing_other": {
+                        "type": "string"
+                      },
+                      "reason_for_testing": {
+                        "type": "string"
+                      },
+                      "community_testing_entry_point_other": {
+                        "type": "string"
+                      },
+                      "community_testing_entry_point": {
+                        "type": "string"
+                      },
+                      "health_unit_testing_entry_point_other": {
+                        "type": "string"
+                      },
+                      "health_unit_testing_entry_point": {
+                        "type": "string"
+                      },
+                      "hts_approach": {
+                        "type": "string"
+                      },
+                      "hts_delivery_model": {
+                        "type": "string"
+                      },
+                      "accompanied_by_other": {
+                        "type": "string"
+                      },
+                      "accompanied_by": {
+                        "type": "string"
+                      },
+                      "marital_status": {
+                        "type": "string"
+                      },
+                      "date_of_birth": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "sex": {
+                        "type": "string",
+                        "enum": [
+                          "M",
+                          "F"
+                        ]
+                      },
+                      "health_unit_district": {
+                        "type": "string"
+                      },
+                      "health_unit_sub_county": {
+                        "type": "string"
+                      },
+                      "health_unit_name": {
+                        "type": "string"
+                      },
+                      "visit_date": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "serial_number": {
+                        "type": "string"
+                      },
+                      "encounter_uuid": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "dhis2_organization_uuid",
+                  "data"
+                ]
+              },
+              "examples": {}
+            }
+          },
+          "description": ""
+        },
+        "description": "HIV Recency Surveillance end-point",
+        "tags": [
+          "recency"
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "HTTP Basic Authenticatiion": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  }
+}
