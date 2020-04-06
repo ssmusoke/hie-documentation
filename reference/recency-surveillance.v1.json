@@ -43,6 +43,7 @@
                 "properties": {
                   "dhis2_organization_uuid": {
                     "type": "string",
+                    "default": "text",
                     "description": "DHIS2 uuid for the facility sending the data "
                   },
                   "data": {
@@ -59,109 +60,271 @@
                     ],
                     "properties": {
                       "dhis2_orgunit_uuid": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "referred_location": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "referred_to_hiv_care": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "No",
+                          "Yes"
+                        ]
                       },
                       "referred_to_tb_services": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "No",
+                          "Yes"
+                        ]
                       },
                       "presumtive_tb": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "No",
+                          "Yes",
+                          "T.B Follow-up"
+                        ]
                       },
                       "couple_result": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "DISCORDANT COUPLE",
+                          "Cordant",
+                          "Concordant Negative",
+                          "Concordant Positive"
+                        ]
                       },
                       "couple_result_received": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "No",
+                          "Yes"
+                        ]
                       },
                       "individual_result_received": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "No",
+                          "Yes"
+                        ]
                       },
                       "recent_hiv_test_result": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Recent",
+                          "Long Term",
+                          "Negative",
+                          "Invalid"
+                        ]
                       },
                       "recency_test_concent": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "No",
+                          "Yes"
+                        ]
                       },
                       "hiv_final_syphillis_duo_result": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Reactive",
+                          "Non-reactive"
+                        ]
                       },
                       "hiv_final_test_result": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "HIV+",
+                          "HIV-",
+                          "INC (HTC)",
+                          "NT (HTC)"
+                        ]
                       },
                       "counseled_as": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Individual",
+                          "Couple",
+                          "Group"
+                        ]
                       },
                       "pretest_counselling_done": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "No",
+                          "Yes"
+                        ]
                       },
                       "partner_recent_test_result": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "HIV+",
+                          "HIV-",
+                          "UNKNOWN"
+                        ]
                       },
                       "prior_partner_testing": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Yes",
+                          "No",
+                          "Don't know",
+                          "Not Applicable"
+                        ]
                       },
                       "number_of_sexual_partners_last_12_months": {
-                        "type": "string"
+                        "type": "integer",
+                        "default": "integer"
                       },
                       "number_of_tests_last_12_months": {
-                        "type": "string"
+                        "type": "integer",
+                        "default": "integer"
                       },
                       "last_hiv_test_result": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "HIV+",
+                          "HIV-"
+                        ]
                       },
                       "last_hiv_test_date": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "yyyy-MM-dd "
                       },
                       "first_time_hiv_test": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "No",
+                          "Yes"
+                        ]
                       },
                       "special_category_other": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "special_category": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Prisoners",
+                          "PWIDS",
+                          "Uniformed forces",
+                          "migrant mothers",
+                          "Truckers",
+                          "Fisher folk",
+                          "Refugees",
+                          "Preganant",
+                          "Breastfeeding",
+                          "AGYW",
+                          "People with Disabilities (PWD)",
+                          "Others (Specify)"
+                        ]
                       },
                       "reason_for_testing_other": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "reason_for_testing": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Assisted Patner Notification (APN)",
+                          "Index Client Testing other than APN",
+                          "PrEP",
+                          "PEP",
+                          "HIV Self-Test Positive",
+                          "Inconclusive HIV Result",
+                          "Self Initiative",
+                          "PMTCT",
+                          "Others"
+                        ]
                       },
                       "community_testing_entry_point_other": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "community_testing_entry_point": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Home Based",
+                          "Hotspot",
+                          "Work Place",
+                          "Outreach",
+                          "Drop in Centre (DIC)",
+                          "Others"
+                        ]
                       },
                       "health_unit_testing_entry_point_other": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "health_unit_testing_entry_point": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "OPD",
+                          "Ward",
+                          "ART clinic",
+                          "Tb clinic",
+                          "Nutrition unit",
+                          "Young Child clinic (YCC)",
+                          "ANC",
+                          "Maternity",
+                          "PNC",
+                          "Family Planning",
+                          "SMC",
+                          "STI Clinic",
+                          "Others (Specify)"
+                        ]
                       },
                       "hts_approach": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Pitc",
+                          "CICT(HCT)"
+                        ]
                       },
                       "hts_delivery_model": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "Health Facility(HF)",
+                          "Community"
+                        ]
                       },
                       "accompanied_by_other": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "accompanied_by": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "GRANDPARENT",
+                          "Father",
+                          "AUNT",
+                          "OTHER FAMILY MEMBER",
+                          "MOTHER",
+                          "Guardian",
+                          "Other Specified Family Member",
+                          "Both Parents"
+                        ]
                       },
                       "marital_status": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                          "SINGLE",
+                          "MARRIED",
+                          "DIVORCED",
+                          "SEPARATED",
+                          "WIDOWED",
+                          "CHILD",
+                          "NEVER MARRIED",
+                          "LIVING WITH PARTNER"
+                        ]
                       },
                       "date_of_birth": {
                         "type": "string",
+                        "default": "yyyy-MM-dd ",
                         "format": "date"
                       },
                       "sex": {
@@ -172,23 +335,29 @@
                         ]
                       },
                       "health_unit_district": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "health_unit_sub_county": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "health_unit_name": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "visit_date": {
                         "type": "string",
+                        "default": "yyyy-MM-dd ",
                         "format": "date"
                       },
                       "serial_number": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       },
                       "encounter_uuid": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "text"
                       }
                     }
                   }
